@@ -1,0 +1,83 @@
+﻿<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        d:DataContext="{d:DesignInstance Type=local:ViewModel}"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <DockPanel>
+
+        <StackPanel DockPanel.Dock ="Top">
+            <Grid Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="90"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="80"/>
+                </Grid.ColumnDefinitions>
+                <Slider Name="alpha" Grid.Row="0" Grid.Column="1" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True" Margin="5" Value="{Binding SelectedColor.Alpha}"/>
+                <TextBlock Grid.Row="0" Grid.Column="0" Margin="5" FontSize="16">Alpha: <Run Text="{Binding ElementName=alpha, Path=Value}"></Run></TextBlock>
+
+                <Slider Name="red" Grid.Row="1" Grid.Column="1" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True" Margin="5" Value="{Binding SelectedColor.Red}"/>
+                <TextBlock Grid.Row="1" Grid.Column="0" Margin="5" FontSize="16">Red: <Run Text="{Binding ElementName=red, Path=Value}"></Run></TextBlock>
+
+
+                <Slider Name="blue" Grid.Row="2" Grid.Column="1" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True" Margin="5" Value="{Binding SelectedColor.Blue}"/>
+                <TextBlock Grid.Row="2" Grid.Column="0" Margin="5" FontSize="16">Blue: <Run Text="{Binding ElementName=blue, Path=Value}"></Run></TextBlock>
+
+
+                <Slider Name="green" Grid.Row="3" Grid.Column="1" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True" Margin="5" Value="{Binding SelectedColor.Green}"/>
+                <TextBlock Grid.Row="3" Grid.Column="0" Margin="5" FontSize="16">Green: <Run Text="{Binding ElementName=green, Path=Value}"></Run></TextBlock>
+
+                <Border Margin="5" Grid.Column="2" Grid.RowSpan="4">
+                    <Border.Background>
+                        <SolidColorBrush Color="{Binding SelectedColor.Color}"></SolidColorBrush>
+                    </Border.Background>
+                </Border>
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button FontSize="16" Margin="5" Width="80" HorizontalAlignment="Left" Command="{Binding AddCmd}">Add</Button>
+                <Button FontSize="16" Margin="95, 5, 5, 5" Width="80" HorizontalAlignment="Left" Command="{Binding RemoveCmd}">Delete</Button>
+            </Grid>
+
+        </StackPanel>
+        <ListBox FontSize="16" Margin="5" ItemsSource="{Binding Path=Colors}" SelectedItem="{Binding SelectedColor}" SelectedIndex="{Binding Index}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Border Margin="0,0,10,0" Grid.Column="1" Height="30" Width="200">
+                            <Border.Background>
+                                <SolidColorBrush Color="{Binding Color}"></SolidColorBrush>
+                            </Border.Background>
+                        </Border>
+                        <!-- чогось не працює -->
+                        <!--<TextBlock FontWeight="Bold" FontSize="18" VerticalAlignment="Center" Grid.Column="0">
+                            <Run Text="{Binding ShortInfo}"/>
+                        </TextBlock>-->
+                        
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </DockPanel>
+</Window>
