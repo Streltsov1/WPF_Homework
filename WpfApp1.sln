@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wpf_control_hotel_rent", "W
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Color Viewer", "WpfApp2\Color Viewer.csproj", "{350F4F90-4ED6-4C59-82A7-99C03240C057}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp3", "WpfApp3\WpfApp3.csproj", "{CEDD5682-62EF-4FFB-A5E5-DD5B0DCF97C3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{350F4F90-4ED6-4C59-82A7-99C03240C057}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{350F4F90-4ED6-4C59-82A7-99C03240C057}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{350F4F90-4ED6-4C59-82A7-99C03240C057}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEDD5682-62EF-4FFB-A5E5-DD5B0DCF97C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEDD5682-62EF-4FFB-A5E5-DD5B0DCF97C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEDD5682-62EF-4FFB-A5E5-DD5B0DCF97C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEDD5682-62EF-4FFB-A5E5-DD5B0DCF97C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
